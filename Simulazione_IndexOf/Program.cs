@@ -1,22 +1,27 @@
 ﻿string frase;
 char carattere;
+int i = 0;
+bool found = false;
 
 Console.WriteLine("Inserire la frase");
 frase = Console.ReadLine();
 Console.WriteLine("inserire il carattere da ricercare");
 carattere = Convert.ToChar(Console.ReadLine());
 
-for (int i = 0;  i < frase.Length; i++)
+for (i = 0; i < frase.Length; i++)
 {
     char carattere2 = frase[i];
-    if(carattere2 == carattere2)
+    if (carattere == carattere2)
     {
-        Console.WriteLine($"La lettera {carattere} compare in posizione {i}");
+        found = true;
         break;
     }
-    if (i == frase.Length - 1)
-    {
-        Console.WriteLine("La lettera non compare nella frase");
-    }
 }
-
+if (found == true)
+{
+    Console.WriteLine($"La lettera compare in posizione {i}");
+}
+else
+{
+    Console.WriteLine("La lettera compare in posizione -1");
+}
